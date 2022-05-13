@@ -10,3 +10,7 @@ export const web3 = createAlchemyWeb3(
 export async function getTxReceipt(txHash: string) {
   return await web3.eth.getTransactionReceipt(txHash);
 }
+
+export async function getAssetTransfers(params) {
+  return await web3.alchemy.getAssetTransfers(params);
+}
