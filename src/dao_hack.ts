@@ -58,9 +58,8 @@ export async function addressToCandidateTxes() {
 export async function txIsValidDeposit(txHash: string): Promise<boolean> {
   let txReceipt = await getTxReceipt(txHash);
 
-  // TODO: check logs + status?
-
-  return false;
+  // TODO: predicate on logs too? Not yet
+  return txReceipt.status === true;
 }
 
 /**
@@ -70,18 +69,29 @@ export async function txIsValidDeposit(txHash: string): Promise<boolean> {
  */
 export async function filterAddresses(addressToTxes) {
   let validAddresses = new Set([]);
+  console.log(
+    `Filtering through ${Object.keys(addressToTxes).length} addresses`
+  );
+  let i = 0;
   for (const address in addressToTxes) {
-    if (Object.prototype.hasOwnProperty.call(addressToTxes, address)) {
-      const txHashes = addressToTxes[address];
+    const txHashes = addressToTxes[address];
 
-      for (const txHash of txHashes) {
-        if (txIsValidDeposit(txHash)) {
-          validAddresses.add(address);
-          break;
-        }
+    for (const txHash of txHashes) {
+      let valid = await txIsValidDeposit(txHash);
+      if (valid) {
+        validAddresses.add(address);
+        break;
       }
     }
+
+    if (i % 100 == 0) {
+      console.log(`Processed ${i} addresses`);
+    }
+
+    i++;
   }
+
+  console.log(`Filtered down to ${validAddresses.size} addresses`);
 
   return validAddresses;
 }
