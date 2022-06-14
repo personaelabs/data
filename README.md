@@ -1,3 +1,3 @@
-# confessions-data
+# dizkus-data
 
-Alchemy scripts to get confessions bot data
+Code for generating dizkus data
