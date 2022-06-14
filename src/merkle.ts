@@ -7,7 +7,12 @@ let F;
 const NULL_NODE = 1n;
 
 // NOTE: default tree depth based on dao hack confessions
-async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_NODE) {
+async function buildTree(
+  leaves,
+  depth = 15,
+  proof_depth = 30,
+  nullNode = NULL_NODE
+) {
   if (!poseidon) {
     poseidon = await buildPoseidon();
     F = poseidon.F;
