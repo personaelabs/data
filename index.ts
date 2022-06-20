@@ -7,7 +7,7 @@ buildTreeMimc(testAddresses, 7, 1n).then((res) => {
   console.log(`Constructed tree with root ${res.root}`);
 
   writeFileSync(
-    "output/vivek_test.json",
+    "output/vivek_lakshman_test.json",
     JSON.stringify(res, (k, v) => (typeof v == "bigint" ? v.toString() : v), 2)
   );
 });
