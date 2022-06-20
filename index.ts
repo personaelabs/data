@@ -1,13 +1,14 @@
 import { writeFileSync } from "fs";
 
 import { testAddresses } from "./src/addresses";
-import { buildTree } from "./src/merkle";
+import { buildTreeMimc } from "./src/merkleMimc";
+import { buildTree } from './src/merkle';
 
-buildTree(testAddresses).then((res) => {
+buildTree(testAddresses, 7, 30, 0n).then((res) => {
   console.log(`Constructed tree with root ${res.root}`);
 
   writeFileSync(
-    "output/dao_hack/test_merkle.json",
+    "output/dizkus_test.json",
     JSON.stringify(res, (k, v) => (typeof v == "bigint" ? v.toString() : v), 2)
   );
 });

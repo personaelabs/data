@@ -1,4 +1,5 @@
 import { buildPoseidon } from "circomlibjs";
+const mimcfs = require("./mimc.ts");
 
 let poseidon;
 let F;
@@ -7,7 +8,7 @@ let F;
 const NULL_NODE = 1n;
 
 // NOTE: default tree depth based on dao hack confessions
-async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_NODE) {
+async function buildTreeMimc(leaves, depth = 15, nullNode = NULL_NODE) {
   if (!poseidon) {
     poseidon = await buildPoseidon();
     F = poseidon.F;
@@ -55,8 +56,9 @@ async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_N
         }
       }
 
-      let poseidonRes = poseidon([child1, child2]);
-      let parent = F.toObject(poseidonRes);
+      let parent = mimcfs.mimcHash(0)(
+        child1, child2
+      );
 
       nodeToLeaves[parent] = child1Leaves.concat(child2Leaves);
 
@@ -66,13 +68,6 @@ async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_N
     curLevel = newLevel;
   }
 
-  for (const leaf in leafToPathElements) {
-    while (leafToPathElements[leaf].length < proof_depth) {
-      leafToPathElements[leaf].push(nullNode);
-      leafToPathIndices[leaf].push(0);
-    }
-  }
-
   return {
     root: curLevel[0],
     leafToPathElements,
@@ -80,4 +75,4 @@ async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_N
   };
 }
 
-export { buildTree };
+export { buildTreeMimc };
