@@ -7,7 +7,12 @@ let F;
 const NULL_NODE = 1n;
 
 // NOTE: default tree depth based on dao hack confessions
-async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_NODE) {
+async function buildTreePoseidon(
+  leaves,
+  depth = 15,
+  proof_depth = 30,
+  nullNode = NULL_NODE
+) {
   if (!poseidon) {
     poseidon = await buildPoseidon();
     F = poseidon.F;
@@ -44,14 +49,14 @@ async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_N
       for (const leaf of child1Leaves) {
         if (leaf !== nullNode) {
           leafToPathElements[leaf].push(child2);
-          leafToPathIndices[leaf].push(0);
+          leafToPathIndices[leaf].push("0");
         }
       }
 
       for (const leaf of child2Leaves) {
         if (leaf !== nullNode) {
           leafToPathElements[leaf].push(child1);
-          leafToPathIndices[leaf].push(1);
+          leafToPathIndices[leaf].push("1");
         }
       }
 
@@ -69,7 +74,7 @@ async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_N
   for (const leaf in leafToPathElements) {
     while (leafToPathElements[leaf].length < proof_depth) {
       leafToPathElements[leaf].push(nullNode);
-      leafToPathIndices[leaf].push(0);
+      leafToPathIndices[leaf].push("0");
     }
   }
 
@@ -80,4 +85,4 @@ async function buildTree(leaves, depth = 15, proof_depth = 30, nullNode = NULL_N
   };
 }
 
-export { buildTree };
+export { buildTreePoseidon };
