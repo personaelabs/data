@@ -9,11 +9,6 @@ const NULL_NODE = 1n;
 
 // NOTE: default tree depth based on dao hack confessions
 async function buildTreeMimc(leaves, depth = 15, nullNode = NULL_NODE) {
-  if (!poseidon) {
-    poseidon = await buildPoseidon();
-    F = poseidon.F;
-  }
-
   // pad with nullNode to guarantee a tree of the desired depth
   const requiredLeaves = 2 ** depth;
   if (leaves.length < requiredLeaves) {
@@ -56,9 +51,7 @@ async function buildTreeMimc(leaves, depth = 15, nullNode = NULL_NODE) {
         }
       }
 
-      let parent = mimcfs.mimcHash(0)(
-        child1, child2
-      );
+      let parent = mimcfs.mimcHash(0)(child1, child2);
 
       nodeToLeaves[parent] = child1Leaves.concat(child2Leaves);
 
