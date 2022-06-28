@@ -1,0 +1,10 @@
+{
+  "addresses": "data/all_valhalla_addresses.csv",
+  "groupId": "dfwinners",
+  "groupName": "DF Winners",
+  "twitterAccount": "df_winners",
+  "description": "A merkle tree of all addresses who were awarded Valhalla NFTs by the Dark Forest team",
+  "whyUseful": "Allow winners of Dark Forest rounds 1-5 to publish messages",
+  "howGenerated": "From Dark Forest team's list of Valhalla NFT winners",
+  "secretIndex": 2
+}
