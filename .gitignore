@@ -3,3 +3,5 @@ output/
 tmp/
 
 secrets.ts
+
+.ipynb_checkpoints
