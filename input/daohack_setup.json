@@ -1,5 +1,5 @@
 {
-  "addresses": "data/dao_hack_addresses.csv",
+  "addresses": "data/daohack/owner_addresses.csv",
   "groupId": "daohack",
   "groupName": "The DAO Hack",
   "twitterAccount": "DAOHackGossip",

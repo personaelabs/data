@@ -1,5 +1,5 @@
 {
-  "addresses": "data/all_valhalla_addresses.csv",
+  "addresses": "data/dfwinners/all_valhalla_addresses.csv",
   "groupId": "dfwinners",
   "groupName": "DF Winners",
   "twitterAccount": "df_winners",
