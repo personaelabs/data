@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "fs";
 
 import { buildTreePoseidon } from "./src/merklePoseidon";
 
-const groupIds = ["heyanontest", "daohack", "dfwinners"];
+const groupIds = ["heyanontest", "daohack", "dfwinners", "hackweek"];
 
 for (const groupId of groupIds) {
   const buffer = readFileSync(`input/${groupId}_setup.json`);
