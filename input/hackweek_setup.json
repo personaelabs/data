@@ -1,0 +1,10 @@
+{
+  "addresses": "data/hackweek/hackweek_addresses.csv",
+  "groupId": "hackweek",
+  "groupName": "0xPARC Hack Week",
+  "twitterAccount": "0xPARCHackWeek",
+  "description": "A merkle tree of addresses of humans participating in 0xPARC NYC Hack Week '22",
+  "whyUseful": "Allows hack week participants to anonymously gossip about hack week publicly.",
+  "howGenerated": "Manually collected from participants",
+  "secretIndex": 3
+}
