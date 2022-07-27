@@ -1,0 +1,10 @@
+{
+  "addresses": "data/gr13zktech/donors_recipients.csv",
+  "groupId": "gr13zktech",
+  "groupName": "Gitcoin GR13 zk-tech donors and recipients",
+  "twitterAccount": "Gr13Zk",
+  "description": "Gitcoin GR13 zk-tech donors and recipients",
+  "whyUseful": "Provides a way for people involved with the zk-tech round of Gr13 to discuss how it went, pseudonymously",
+  "howGenerated": "Collected from `DonationSent` events on the BulkCheckout contract",
+  "secretIndex": 4
+}
