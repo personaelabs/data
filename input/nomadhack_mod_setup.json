@@ -1,5 +1,5 @@
 {
-  "addresses": "data/nomadhack/hackers.csv",
+  "addresses": "data/nomadhack_mod/hackers.csv",
   "groupId": "nomadhack_mod",
   "groupName": "The Nomad Hack",
   "twitterAccount": "NomadWhitehats",

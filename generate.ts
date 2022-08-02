@@ -8,7 +8,7 @@ const groupIds = [
   "dfwinners",
   "hackweek",
   "gr13zktech",
-  "nomadhack",
+  "nomadhack_mod",
 ];
 
 for (const groupId of groupIds) {
