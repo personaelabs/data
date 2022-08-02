@@ -1,0 +1,10 @@
+{
+  "addresses": "data/nomadhack/hackers.csv",
+  "groupId": "nomadhack_mod",
+  "groupName": "The Nomad Hack",
+  "twitterAccount": "NomadWhitehats",
+  "description": "A merkle tree of all addresses that hacked the NomadXYZ bridge on 8/1/22",
+  "whyUseful": "Get confessions from those involved in a huge hack",
+  "howGenerated": "Transactions to the bridge that called process() with 0x00 root",
+  "secretIndex": 5
+}
