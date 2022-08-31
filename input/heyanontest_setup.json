@@ -1,12 +1,13 @@
 {
   "addresses": [
     "0x7162C2F74a1b968aa33E3DCFd15366264E9eC53c",
-    "0xed625c9ABa1245Fa8e22eb1f1825881517A9DCE7"
+    "0xed625c9ABa1245Fa8e22eb1f1825881517A9DCE7",
+    "0x9D8CBBf7C8dE4e5e8899D6Bc4FD812fEB17b688A"
   ],
   "groupId": "heyanontest",
   "groupName": "heyanon Testing",
   "twitterAccount": "heyanontest",
-  "description": "A merkle tree of one address of Vivek's and one of Lakshman's",
+  "description": "A merkle tree addresses for designated testers",
   "whyUseful": "To test our user flow and API endpoints lol",
   "howGenerated": "dizkus-data",
   "secretIndex": 0
