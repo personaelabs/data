@@ -2,14 +2,7 @@ import { readFileSync, writeFileSync } from "fs";
 
 import { buildTreePoseidon } from "./src/merklePoseidon";
 
-const groupIds = [
-  "heyanontest",
-  "daohack",
-  "dfwinners",
-  "hackweek",
-  "gr13zktech",
-  "nomadhack_mod",
-];
+const groupIds = ["gen_validators"];
 
 for (const groupId of groupIds) {
   const buffer = readFileSync(`input/${groupId}_setup.json`);
@@ -21,7 +14,7 @@ for (const groupId of groupIds) {
     addresses = readFileSync(addresses, "utf8").split(/\r?\n/);
   }
 
-  buildTreePoseidon(addresses, 7, 30, 0n).then((res) => {
+  buildTreePoseidon(addresses, 13, 30, 0n).then((res) => {
     console.log(
       `Constructed tree with root ${res.root} for groupId ${groupId}`
     );

@@ -1,0 +1,10 @@
+{
+    "addresses": "data/gen_validators/etherscan_filtered.csv",
+    "groupId": "genvalidators",
+    "groupName": "Genesis Validators",
+    "twitterAccount": "DAOHackGossip",
+    "description": "The genesis validators of the Ethereum Beacon Chain; those who deposited before Dec 1st",
+    "whyUseful": "Allow discourse from people who have been contirbuting to success of beacon chain from the beginning!",
+    "howGenerated": "Downloaded all the transactions from the creation of the deposit contract until mid Dec 2020, unique list then refined in Python",
+    "secretIndex": ""
+}
