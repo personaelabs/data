@@ -1,4 +1,4 @@
-# dizkus-data
+# Personae Labs data
 
 Repository to generate trees for all dizkus applications, including heyanon!
 
