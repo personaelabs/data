@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "fs";
 
 import { buildTreePoseidon } from "./src/merklePoseidon";
 
-const groupIds = ["gen_validators"];
+const groupIds = ["heyanontest"];
 
 for (const groupId of groupIds) {
   const buffer = readFileSync(`input/${groupId}_setup.json`);
