@@ -3,9 +3,15 @@
         "target": "es2020",
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "declaration": true,
+        "outDir": "dist"
     },
     "ts-node": {
         "esm": true,
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
 }

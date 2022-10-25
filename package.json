@@ -1,9 +1,11 @@
 {
-  "name": "confessions-data",
+  "name": "personae-labs-data",
   "version": "1.0.0",
-  "description": "data for 'confessions' zk-apps",
-  "main": "index.ts",
+  "description": "data tools for personae labs apps",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "npx ts-node generate.ts",
     "migrate": "cp output/*.json ../webapp/pages/api/trees/"
