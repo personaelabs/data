@@ -1,4 +1,3 @@
-node_modules/
 output/
 tmp/
 
@@ -6,5 +5,3 @@ secrets.ts
 
 .ipynb_checkpoints
 .DS_Store
-
-dist/
